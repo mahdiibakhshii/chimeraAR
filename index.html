@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- PUT YOUR PAGE NAME -->
+    <title>YOUR PAGE NAME</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="my-styles.css" />
+
+    <!-- The following libraries and polyfills are recommended to maximize browser support -->
+    <!-- NOTE: you must adjust the paths as appropriate for your project -->
+
+    <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script
+      src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js"
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <main class="page-layout">
+      <header class="meta-top" aria-label="Page controls">
+        <button id="about-toggle" aria-label="Open about page">ABOUT</button>
+        <button id="ar-button" aria-label="Open AR view">AR</button>
+      </header>
+
+      <section class="viewer-stage" aria-label="3D viewer area">
+        <model-viewer
+          id="main-model-viewer"
+          src="./assets/cube.glb"
+          shadow-intensity="3"
+          ar
+          ar-modes="webxr scene-viewer quick-look"
+          ar-placement="floor"
+          camera-controls
+          autoplay
+          ar-scale="auto"
+          auto-rotate
+        ></model-viewer>
+      </section>
+      <section id="about-layer" aria-hidden="true">
+        <div id="about-content">Loading...</div>
+      </section>
+      <section id="qr-layer" aria-hidden="true">
+        <div id="qr-code"></div>
+      </section>
+
+      <aside class="side-meta" aria-label="Project metadata">
+        <p class="credit-line">© name</p>
+        <p class="chimera-name">chimera name</p>
+      </aside>
+    </main>
+
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script>
+      const aboutToggle = document.getElementById("about-toggle");
+      const aboutLayer = document.getElementById("about-layer");
+      const aboutContent = document.getElementById("about-content");
+      const arButton = document.getElementById("ar-button");
+      const modelViewer = document.getElementById("main-model-viewer");
+      const qrLayer = document.getElementById("qr-layer");
+      const qrCodeContainer = document.getElementById("qr-code");
+
+      let aboutLoaded = false;
+      let aboutOpen = false;
+      let qrReady = false;
+
+      async function loadAboutContent() {
+        if (aboutLoaded) return;
+
+        try {
+          const response = await fetch("./about.md");
+          if (!response.ok) throw new Error("Could not load about.md");
+          const markdown = await response.text();
+          aboutContent.innerHTML = marked.parse(markdown);
+        } catch (error) {
+          aboutContent.innerHTML =
+            "<h1>About</h1><p>Could not load about.md. Please make sure the file exists in the project root.</p>";
+        }
+        aboutLoaded = true;
+      }
+
+      async function openAbout() {
+        await loadAboutContent();
+        aboutOpen = true;
+        document.body.classList.add("about-open");
+        aboutLayer.classList.add("is-visible");
+        aboutLayer.setAttribute("aria-hidden", "false");
+        aboutToggle.textContent = "X";
+        aboutToggle.setAttribute("aria-label", "Close about page");
+      }
+
+      function closeAbout() {
+        aboutOpen = false;
+        document.body.classList.remove("about-open");
+        aboutLayer.classList.remove("is-visible");
+        aboutLayer.setAttribute("aria-hidden", "true");
+        aboutToggle.textContent = "ABOUT";
+        aboutToggle.setAttribute("aria-label", "Open about page");
+      }
+
+      function closeQrLayer() {
+        qrLayer.classList.remove("is-visible");
+        qrLayer.setAttribute("aria-hidden", "true");
+      }
+
+      aboutToggle.addEventListener("click", async () => {
+        if (aboutOpen) {
+          closeAbout();
+        } else {
+          closeQrLayer();
+          await openAbout();
+        }
+      });
+
+      function ensureQrCode() {
+        if (qrReady) return;
+        new QRCode(qrCodeContainer, {
+          text: window.location.href,
+          width: 220,
+          height: 220,
+          colorDark: "#000000",
+          colorLight: "transparent",
+          correctLevel: QRCode.CorrectLevel.M
+        });
+        qrReady = true;
+      }
+
+      function isDesktopPointer() {
+        return window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      }
+
+      arButton.addEventListener("click", () => {
+        if (isDesktopPointer()) {
+          if (aboutOpen) closeAbout();
+          ensureQrCode();
+          qrLayer.classList.add("is-visible");
+          qrLayer.setAttribute("aria-hidden", "false");
+          return;
+        }
+        modelViewer.activateAR();
+      });
+
+      qrLayer.addEventListener("click", () => {
+        closeQrLayer();
+      });
+    </script>
+  </body>
+</html>

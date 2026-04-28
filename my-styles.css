@@ -1,0 +1,254 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #e8e8e8;
+  overflow: hidden;
+  color: #111;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.page-layout {
+  position: fixed;
+  inset: 0;
+}
+
+.meta-top {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#ar-button {
+  display: inline;
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #000;
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+#ar-button:hover {
+  opacity: 0.75;
+}
+
+#about-toggle {
+  color: #000;
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+#about-toggle:hover {
+  opacity: 0.75;
+}
+
+.viewer-stage {
+  position: fixed;
+  inset: 0;
+  background: #e8e8e8;
+}
+
+model-viewer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+}
+
+model-viewer::part(default-ar-button) {
+  display: none;
+}
+
+.side-meta {
+  position: fixed;
+  right: 18px;
+  top: auto;
+  bottom: 18px;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.chimera-name {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #000;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
+}
+
+.credit-line {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  color: #000;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
+}
+
+#about-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  display: none;
+  background: rgba(232, 232, 232, 0.94);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+#about-layer.is-visible {
+  display: grid;
+  place-items: center;
+}
+
+#qr-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  display: none;
+  background: rgba(232, 232, 232, 0.94);
+}
+
+#qr-layer.is-visible {
+  display: grid;
+  place-items: center;
+}
+
+#qr-code {
+  width: 240px;
+  height: 240px;
+  padding: 10px;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+#qr-code img,
+#qr-code canvas {
+  display: block;
+  width: 220px !important;
+  height: 220px !important;
+}
+
+#about-content {
+  width: clamp(320px, 34vw, 560px);
+  max-height: calc(100vh - 130px);
+  overflow-y: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#about-content h1,
+#about-content h2,
+#about-content h3 {
+  margin: 0 0 14px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 30px;
+  letter-spacing: 0.01em;
+  color: #000;
+}
+
+#about-content p,
+#about-content li {
+  margin: 0 0 12px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  text-align: justify;
+  color: #000;
+}
+
+@media (max-width: 700px) {
+  body {
+    height: 100dvh;
+    width: 100vw;
+  }
+
+  .chimera-name {
+    font-size: 24px;
+  }
+
+  .credit-line {
+    font-size: 14px;
+  }
+
+  .side-meta {
+    right: 2px;
+    top: auto;
+    bottom: 2px;
+    gap: 8px;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .meta-top {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+  }
+
+  #about-toggle {
+    font-size: 26px;
+  }
+
+  #ar-button {
+    font-size: 26px;
+  }
+
+  #about-layer {
+    padding: 12px;
+  }
+
+  #about-content {
+    width: calc(100vw - 34px);
+    max-height: calc(100vh - 110px);
+    padding: 0;
+  }
+
+  #about-content h1,
+  #about-content h2,
+  #about-content h3 {
+    font-size: 24px;
+  }
+
+  #about-content p,
+  #about-content li {
+    font-size: 20px;
+  }
+
+  body.about-open .side-meta {
+    display: none;
+  }
+}
+
+
