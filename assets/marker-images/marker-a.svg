@@ -1,0 +1,100 @@
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <title>SamandAR Marker A — Primary (QR Sign)</title>
+
+  <defs>
+    <!-- Checkerboard pattern for upper-left quadrant -->
+    <pattern id="checker-a" x="0" y="0" width="90" height="90" patternUnits="userSpaceOnUse">
+      <rect width="45" height="45" fill="#111"/>
+      <rect x="45" width="45" height="45" fill="#f8f8f8"/>
+      <rect y="45" width="45" height="45" fill="#f8f8f8"/>
+      <rect x="45" y="45" width="45" height="45" fill="#111"/>
+    </pattern>
+    <!-- Cross-hatch for lower-left -->
+    <pattern id="hatch-a" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="40" y2="40" stroke="#111" stroke-width="4"/>
+      <line x1="0" y1="20" x2="20" y2="40" stroke="#111" stroke-width="4"/>
+      <line x1="20" y1="0" x2="40" y2="20" stroke="#111" stroke-width="4"/>
+    </pattern>
+    <!-- Small squares for lower-right cluster -->
+    <pattern id="dots-a" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <rect x="4" y="4" width="14" height="14" fill="#111"/>
+    </pattern>
+  </defs>
+
+  <!-- Outer black frame -->
+  <rect width="800" height="800" fill="#111"/>
+  <!-- White interior -->
+  <rect x="36" y="36" width="728" height="728" fill="#f8f8f8"/>
+
+  <!-- ── Upper-Left: Checkerboard grid ───────────────────────────────── -->
+  <rect x="44" y="44" width="360" height="360" fill="url(#checker-a)"/>
+  <!-- Offset row to break symmetry -->
+  <rect x="44" y="359" width="360" height="45" fill="url(#checker-a)" transform="translate(22,0)"/>
+
+  <!-- ── Upper-Right: Concentric circles ────────────────────────────── -->
+  <clipPath id="tr-clip">
+    <rect x="404" y="44" width="356" height="360"/>
+  </clipPath>
+  <g clip-path="url(#tr-clip)">
+    <!-- Alternating filled / stroked circles from outer to inner -->
+    <circle cx="612" cy="224" r="172" fill="#111"/>
+    <circle cx="612" cy="224" r="148" fill="#f8f8f8"/>
+    <circle cx="612" cy="224" r="120" fill="#111"/>
+    <circle cx="612" cy="224" r="94"  fill="#f8f8f8"/>
+    <circle cx="612" cy="224" r="66"  fill="#111"/>
+    <circle cx="612" cy="224" r="40"  fill="#f8f8f8"/>
+    <circle cx="612" cy="224" r="16"  fill="#111"/>
+    <!-- Asymmetry: add one offset circle -->
+    <circle cx="540" cy="140" r="22"  fill="#111"/>
+  </g>
+
+  <!-- ── Lower-Left: Diagonal hatch stripes ─────────────────────────── -->
+  <rect x="44" y="404" width="360" height="356" fill="url(#hatch-a)"/>
+  <!-- Overlay some solid rectangles to add more feature variation -->
+  <rect x="60"  y="420" width="80" height="24"  fill="#111"/>
+  <rect x="180" y="466" width="60" height="24"  fill="#111"/>
+  <rect x="100" y="520" width="120" height="24" fill="#111"/>
+  <rect x="60"  y="580" width="40" height="24"  fill="#111"/>
+  <rect x="230" y="610" width="90" height="24"  fill="#111"/>
+  <rect x="80"  y="660" width="160" height="24" fill="#111"/>
+  <rect x="220" y="720" width="60" height="24"  fill="#111"/>
+
+  <!-- ── Lower-Right: Scattered circles of varying size ─────────────── -->
+  <rect x="404" y="404" width="356" height="356" fill="#f8f8f8"/>
+  <circle cx="450" cy="450" r="36" fill="#111"/>
+  <circle cx="540" cy="430" r="18" fill="#111"/>
+  <circle cx="610" cy="460" r="28" fill="#111"/>
+  <circle cx="700" cy="438" r="14" fill="#111"/>
+  <circle cx="468" cy="530" r="12" fill="#111"/>
+  <circle cx="570" cy="520" r="40" fill="#111"/>
+  <circle cx="680" cy="510" r="22" fill="#111"/>
+  <circle cx="730" cy="560" r="10" fill="#111"/>
+  <circle cx="440" cy="618" r="24" fill="#111"/>
+  <circle cx="510" cy="640" r="16" fill="#111"/>
+  <circle cx="618" cy="608" r="32" fill="#111"/>
+  <circle cx="720" cy="624" r="20" fill="#111"/>
+  <circle cx="460" cy="720" r="18" fill="#111"/>
+  <circle cx="558" cy="710" r="10" fill="#111"/>
+  <circle cx="660" cy="700" r="30" fill="#111"/>
+  <circle cx="742" cy="718" r="14" fill="#111"/>
+
+  <!-- ── Center: Bold "A" identifier ────────────────────────────────── -->
+  <text x="400" y="428" text-anchor="middle" dominant-baseline="middle"
+        font-family="Georgia, 'Times New Roman', serif" font-size="120"
+        font-weight="bold" fill="#111" opacity="0.18">A</text>
+
+  <!-- ── Corner triangles (3 of 4 — asymmetric) ──────────────────────── -->
+  <polygon points="44,44  130,44  44,130"   fill="#111"/>
+  <polygon points="756,44  670,44  756,130"  fill="#111"/>
+  <polygon points="44,756  130,756 44,670"   fill="#111"/>
+  <!-- Bottom-right corner INTENTIONALLY EMPTY — creates asymmetry -->
+
+  <!-- ── Divider cross lines ───────────────────────────────────────────
+       Thin lines show quadrant boundaries, helping trackers detect edges -->
+  <line x1="404" y1="44"  x2="404" y2="756" stroke="#777" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="44"  y1="404" x2="756" y2="404" stroke="#777" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- ── Outer border ring (thickens inner edge of frame) ─────────────── -->
+  <rect x="36" y="36" width="728" height="728"
+        fill="none" stroke="#111" stroke-width="6"/>
+</svg>

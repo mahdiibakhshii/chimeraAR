@@ -1,0 +1,123 @@
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <title>SamandAR Marker B — Railing Sign</title>
+
+  <defs>
+    <!-- Fine grid for background texture -->
+    <pattern id="grid-b" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#16213e"/>
+      <line x1="0" y1="0" x2="20" y2="0" stroke="#1f2f55" stroke-width="0.8"/>
+      <line x1="0" y1="0" x2="0" y2="20" stroke="#1f2f55" stroke-width="0.8"/>
+    </pattern>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="800" height="800" fill="#16213e"/>
+  <!-- Background grid texture -->
+  <rect x="36" y="36" width="728" height="728" fill="url(#grid-b)"/>
+
+  <!-- Light border frame -->
+  <rect x="0" y="0" width="800" height="800" fill="none" stroke="#e0e0e0" stroke-width="36"/>
+  <rect x="40" y="40" width="720" height="720" fill="none" stroke="#e0e0e0" stroke-width="3"/>
+
+  <!-- ── Horizontal traces (circuit board routing) ───────────────────── -->
+  <!-- Varying thickness — thicker lines are power/ground rails -->
+  <line x1="60"  y1="100" x2="740" y2="100" stroke="#e0e0e0" stroke-width="5"/>
+  <line x1="60"  y1="158" x2="480" y2="158" stroke="#e0e0e0" stroke-width="2.5"/>
+  <line x1="320" y1="220" x2="740" y2="220" stroke="#e0e0e0" stroke-width="8"/>
+  <line x1="60"  y1="280" x2="600" y2="280" stroke="#e0e0e0" stroke-width="2.5"/>
+  <line x1="60"  y1="340" x2="740" y2="340" stroke="#e0e0e0" stroke-width="12"/>
+  <line x1="140" y1="400" x2="620" y2="400" stroke="#e0e0e0" stroke-width="2.5"/>
+  <line x1="60"  y1="460" x2="740" y2="460" stroke="#e0e0e0" stroke-width="5"/>
+  <line x1="200" y1="520" x2="740" y2="520" stroke="#e0e0e0" stroke-width="2.5"/>
+  <line x1="60"  y1="580" x2="560" y2="580" stroke="#e0e0e0" stroke-width="8"/>
+  <line x1="60"  y1="640" x2="740" y2="640" stroke="#e0e0e0" stroke-width="2.5"/>
+  <line x1="60"  y1="700" x2="740" y2="700" stroke="#e0e0e0" stroke-width="5"/>
+
+  <!-- ── Vertical traces ─────────────────────────────────────────────── -->
+  <line x1="100" y1="60"  x2="100" y2="740" stroke="#e0e0e0" stroke-width="5"/>
+  <line x1="180" y1="60"  x2="180" y2="400" stroke="#e0e0e0" stroke-width="2.5"/>
+  <line x1="260" y1="220" x2="260" y2="740" stroke="#e0e0e0" stroke-width="8"/>
+  <line x1="340" y1="60"  x2="340" y2="580" stroke="#e0e0e0" stroke-width="2.5"/>
+  <line x1="420" y1="100" x2="420" y2="740" stroke="#e0e0e0" stroke-width="12"/>
+  <line x1="500" y1="60"  x2="500" y2="580" stroke="#e0e0e0" stroke-width="2.5"/>
+  <line x1="580" y1="100" x2="580" y2="740" stroke="#e0e0e0" stroke-width="5"/>
+  <line x1="660" y1="60"  x2="660" y2="460" stroke="#e0e0e0" stroke-width="2.5"/>
+  <line x1="720" y1="220" x2="720" y2="740" stroke="#e0e0e0" stroke-width="8"/>
+
+  <!-- ── Solder pads / vias at selected intersections (NOT all) ─────── -->
+  <!-- Using asymmetric placement — more pads in upper-left, fewer lower-right -->
+  <circle cx="100" cy="100" r="12" fill="#e0e0e0"/>
+  <circle cx="180" cy="100" r="8"  fill="none" stroke="#e0e0e0" stroke-width="3"/>
+  <circle cx="260" cy="220" r="14" fill="#e0e0e0"/>
+  <circle cx="340" cy="100" r="8"  fill="#e0e0e0"/>
+  <circle cx="420" cy="100" r="18" fill="#e0e0e0"/>
+  <circle cx="500" cy="220" r="10" fill="none" stroke="#e0e0e0" stroke-width="3"/>
+  <circle cx="580" cy="100" r="8"  fill="#e0e0e0"/>
+  <circle cx="660" cy="100" r="12" fill="none" stroke="#e0e0e0" stroke-width="3"/>
+  <circle cx="100" cy="158" r="8"  fill="#e0e0e0"/>
+  <circle cx="180" cy="220" r="10" fill="#e0e0e0"/>
+  <circle cx="100" cy="280" r="12" fill="none" stroke="#e0e0e0" stroke-width="3"/>
+  <circle cx="340" cy="280" r="8"  fill="#e0e0e0"/>
+  <circle cx="420" cy="340" r="22" fill="#e0e0e0"/>  <!-- large pad -->
+  <circle cx="260" cy="340" r="8"  fill="none" stroke="#e0e0e0" stroke-width="3"/>
+  <circle cx="580" cy="340" r="12" fill="#e0e0e0"/>
+  <circle cx="100" cy="400" r="8"  fill="#e0e0e0"/>
+  <circle cx="260" cy="460" r="10" fill="#e0e0e0"/>
+  <circle cx="420" cy="460" r="14" fill="none" stroke="#e0e0e0" stroke-width="4"/>
+  <circle cx="580" cy="460" r="8"  fill="#e0e0e0"/>
+  <circle cx="100" cy="520" r="10" fill="none" stroke="#e0e0e0" stroke-width="3"/>
+  <circle cx="260" cy="580" r="16" fill="#e0e0e0"/>
+  <circle cx="420" cy="580" r="8"  fill="#e0e0e0"/>
+  <circle cx="100" cy="640" r="8"  fill="#e0e0e0"/>
+  <circle cx="260" cy="640" r="12" fill="none" stroke="#e0e0e0" stroke-width="3"/>
+  <circle cx="420" cy="640" r="8"  fill="#e0e0e0"/>
+  <circle cx="580" cy="640" r="10" fill="#e0e0e0"/>
+  <circle cx="720" cy="640" r="14" fill="none" stroke="#e0e0e0" stroke-width="4"/>
+  <circle cx="100" cy="700" r="8"  fill="#e0e0e0"/>
+  <circle cx="260" cy="700" r="8"  fill="none" stroke="#e0e0e0" stroke-width="3"/>
+  <circle cx="580" cy="700" r="12" fill="#e0e0e0"/>
+  <circle cx="720" cy="700" r="8"  fill="#e0e0e0"/>
+
+  <!-- ── IC chip components ────────────────────────────────────────────── -->
+  <!-- IC 1: upper area, left -->
+  <rect x="130" y="114" width="90" height="52" fill="#16213e" stroke="#e0e0e0" stroke-width="3" rx="4"/>
+  <text x="175" y="146" text-anchor="middle" dominant-baseline="middle"
+        font-family="monospace" font-size="14" fill="#82b1ff">U1</text>
+  <!-- Pin lines on IC 1 -->
+  <line x1="120" y1="126" x2="130" y2="126" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="120" y1="140" x2="130" y2="140" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="120" y1="154" x2="130" y2="154" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="220" y1="126" x2="230" y2="126" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="220" y1="140" x2="230" y2="140" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="220" y1="154" x2="230" y2="154" stroke="#e0e0e0" stroke-width="2"/>
+
+  <!-- IC 2: middle area -->
+  <rect x="450" y="354" width="110" height="72" fill="#16213e" stroke="#e0e0e0" stroke-width="3" rx="4"/>
+  <text x="505" y="394" text-anchor="middle" dominant-baseline="middle"
+        font-family="monospace" font-size="14" fill="#82b1ff">U2</text>
+  <line x1="440" y1="366" x2="450" y2="366" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="440" y1="382" x2="450" y2="382" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="440" y1="398" x2="450" y2="398" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="440" y1="414" x2="450" y2="414" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="560" y1="366" x2="570" y2="366" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="560" y1="382" x2="570" y2="382" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="560" y1="398" x2="570" y2="398" stroke="#e0e0e0" stroke-width="2"/>
+
+  <!-- IC 3: lower area, right -->
+  <rect x="610" y="554" width="90" height="52" fill="#16213e" stroke="#e0e0e0" stroke-width="3" rx="4"/>
+  <text x="655" y="582" text-anchor="middle" dominant-baseline="middle"
+        font-family="monospace" font-size="14" fill="#82b1ff">U3</text>
+  <line x1="600" y1="566" x2="610" y2="566" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="600" y1="582" x2="610" y2="582" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="700" y1="566" x2="710" y2="566" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="700" y1="582" x2="710" y2="582" stroke="#e0e0e0" stroke-width="2"/>
+
+  <!-- ── Asymmetric identifier: "B" label ──────────────────────────────── -->
+  <text x="700" y="160" text-anchor="middle" dominant-baseline="middle"
+        font-family="Georgia, serif" font-size="80" font-weight="bold"
+        fill="#e0e0e0" opacity="0.15">B</text>
+
+  <!-- ── Bottom-left corner: asterisk / star (asymmetric marker) ───────── -->
+  <text x="72" y="756" text-anchor="middle" dominant-baseline="middle"
+        font-family="Arial" font-size="42" fill="#e0e0e0">✦</text>
+</svg>

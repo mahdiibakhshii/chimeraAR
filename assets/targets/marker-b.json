@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "left": 128,
+    "top": 0,
+    "width": 768,
+    "height": 1024,
+    "isRotated": true,
+    "originalWidth": 1024,
+    "originalHeight": 1024
+  },
+  "imagePath": "assets/targets/marker-b_luminance.png",
+  "metadata": null,
+  "name": "marker-b",
+  "resources": {
+    "originalImage": "marker-b_original.png",
+    "croppedImage": "marker-b_cropped.png",
+    "thumbnailImage": "marker-b_thumbnail.png",
+    "luminanceImage": "marker-b_luminance.png"
+  },
+  "created": 1778423865454,
+  "updated": 1778423865454
+}

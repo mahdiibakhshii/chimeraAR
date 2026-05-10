@@ -1,0 +1,13 @@
+{
+  "name": "samandar-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build tools for SamandAR marker processing",
+  "scripts": {
+    "generate-markers": "node generate-markers.js",
+    "process-targets": "node process-targets.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.0"
+  }
+}

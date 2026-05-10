@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>SamandAR</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!--
+    Three.js via importmap (ES modules).
+    Must appear before any <script type="module"> that imports from 'three'.
+  -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <!--
+    8th Wall Engine Binary — SLAM + Image Targets.
+    Download xr.js from https://8th.io/xrjs and place in vendor/8thwall/
+    See README.md for setup instructions.
+
+    data-preload-chunks="slam"  — loads SLAM module on startup
+  -->
+  <script async src="vendor/8thwall/xr.js" data-preload-chunks="slam"></script>
+</head>
+<body>
+
+  <!-- Camera feed canvas: 8th Wall draws device camera here -->
+  <canvas id="camerafeed"></canvas>
+
+  <!-- Three.js overlay canvas is injected by app.js (#three-canvas) -->
+
+  <!-- ── Debug Overlay ──────────────────────────────────────────────── -->
+  <div id="debug-overlay">
+    <div class="debug-header">
+      <span>SamandAR Debug</span>
+      <button id="debug-toggle">Hide</button>
+    </div>
+
+    <div id="debug-content">
+
+      <div class="debug-section">
+        <div class="debug-label">Markers</div>
+        <div id="marker-status"><!-- Populated by DebugOverlay --></div>
+      </div>
+
+      <div class="debug-section">
+        <div class="debug-label">Estimated Rod Position (meters)</div>
+        <div id="rod-position">— scan a marker —</div>
+      </div>
+
+      <div class="debug-section">
+        <div class="debug-label">Confidence</div>
+        <div id="confidence-row">
+          <div id="confidence-bar">
+            <div id="confidence-fill"></div>
+          </div>
+          <span id="confidence-text">0%</span>
+        </div>
+        <div id="markers-seen">No markers detected yet</div>
+      </div>
+
+      <div class="debug-buttons">
+        <button id="reset-btn">Reset All Markers</button>
+        <button id="cylinder-toggle">Hide Debug Cylinder</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Loading Screen ─────────────────────────────────────────────── -->
+  <div id="loading-screen">
+    <div class="loading-inner">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Initialising AR…</div>
+      <div class="loading-sub">Allow camera access when prompted</div>
+    </div>
+  </div>
+
+  <!-- App entry point (ES module — deferred by spec, safe ordering) -->
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>

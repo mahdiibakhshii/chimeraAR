@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "left": 128,
+    "top": 0,
+    "width": 768,
+    "height": 1024,
+    "isRotated": true,
+    "originalWidth": 1024,
+    "originalHeight": 1024
+  },
+  "imagePath": "assets/targets/marker-c_luminance.png",
+  "metadata": null,
+  "name": "marker-c",
+  "resources": {
+    "originalImage": "marker-c_original.png",
+    "croppedImage": "marker-c_cropped.png",
+    "thumbnailImage": "marker-c_thumbnail.png",
+    "luminanceImage": "marker-c_luminance.png"
+  },
+  "created": 1778423866848,
+  "updated": 1778423866848
+}
