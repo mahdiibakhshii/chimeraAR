@@ -1,13 +1,6 @@
-# CHIMERA Name
+# Samand Eslar
 
-This text appears in the overlay opened by the `ABOUT` label. Click `X` to close and return to the 3D view.
-
-Placeholder text for layout testing: Chimera research unfolds across fragmented memories, synthetic anatomies, and speculative rituals that merge archival traces with generated futures. This project explores hybrid embodiment through digital sculpture, moving between mythological residue and machine perception. Each form behaves like a temporary host: unstable, layered, and responsive to context. The narrative remains intentionally open, inviting interpretation through ambiguity and transformation.
-
-
-
-PS: You can use Markdown formatting, for example:
-
-- Bullet lists
-- **Bold text**
-- *Italic text*
+This is Samand Eslar. She has two heads, two wings, and long dark hair falling from the back of her skull. Her upper body — shoulders drawn, one hand lifted as if to knock — belongs to Xeir Bar Kar, who once came at night as an old woman to leave each family their share of the year, while people slept with their pot lids open and a light burning by the door. From the waist down she is the southern serpent of the old books, whose gaze is so full of venom that to meet it is to be finished.
+The body is not hers. It was taken. When the suffering zone darkened — blood in the streets, wells gone dry, fields cracked open — something rose out of that long grief that had not existed before, and it moved through the ruined houses looking for a body to wear. Xeir Bar Kar kept making her rounds even then. One night she came to a kitchen where a pot had been left open out of old habit, though the family inside had long since fled. She bent to leave her blessing. Samand Eslar was waiting in the dark behind the stove. She took Xeir by the throat and poured herself in through the mouth, and when she had filled the body she pulled the door shut behind her.
+Now Xeir Bar Kar is imprisoned inside her own skin. The serpent head with the killing gaze is Samand Eslar looking out. The old woman's face is Xeir, still trying to remember the way back. The messenger still comes — still finds the cracked door, still bends her ear to the open pot — but what she carries now is not the year's share. She brings dryness where there was water, fear where there was sleep, war where there was a kitchen. Where she lands, something is coming. Where the serpent looks directly, something has already arrived.
+She has been seen in the safe zone now. One man rode out to meet her with a spear; both he and his horse turned black where they stood. Some have begun, quietly, to leave their pot lids open again — not because they remember why, only because something in them hopes the old woman's face, still trapped inside, might recognize the gesture and turn the other head away.
